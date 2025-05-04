@@ -1,0 +1,2 @@
+<!-- algebrite組み込み -->
+<script src="algebrite.bundle-for-browser.js"></script>

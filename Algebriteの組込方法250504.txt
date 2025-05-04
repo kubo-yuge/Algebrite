@@ -1,0 +1,13 @@
+作成したKeTCindyJSのhtmlファイルにAlgebriteを組み込むには，
+kettaskv250504の作り方.txtを参考に
+Alg0.txt，Alg1.txt，Alg2.txtを利用すればよい。
+
+Alg0.txt：
+algebriteのスクリプトへのリンク
+Alg1.txt：
+AlgebraとKeTCindyで変数を共有
+Alg2.txt：
+必要な関数の定義
+を実施する。
+
+(2025/5/4)

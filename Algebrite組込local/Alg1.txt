@@ -1,0 +1,15 @@
+<!-- java,KeTCindyの変数を共有 -->
+<script type="text/javascript">
+function jsstring_to_cs(jsvar, csvar) {
+var com = csvar + ' = "' + eval(jsvar) +'"';
+// alert("jsstring_to_cs: com="+com);
+cdy.evokeCS(com);
+}
+function js_to_cs(jsvar, csvar) {
+var com = csvar + ' = ' + eval(jsvar);
+// alert("js_to_cs: com="+com);
+cdy.evokeCS(com);
+}
+
+</script>
+

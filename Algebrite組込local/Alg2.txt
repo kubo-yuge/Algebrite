@@ -1,0 +1,38 @@
+// exealgなどの定義開始 ;
+//<script id="csinit" type="text/x-cindyscript">
+jstocs(jsvar,csvar):=(
+com = "js_to_cs('" + jsvar + "','" + csvar +"')";
+// alert("jstcs com="+com);
+javascript(com);
+);
+jsstringtocs(jsvar,csvar):=(
+com = "jsstring_to_cs('" + jsvar + "','" + csvar +"')";
+javascript(com);
+);
+cstojs(csvar,jsvar):=(
+// print("csvar="+csvar+", jsvar="+jsvar);
+// print(jsvar + " = " + parse(csvar));
+javascript(jsvar + " = " + parse(csvar));
+);
+csstringtojs(csvar,jsvar):=(
+javascript(jsvar + " = '" + parse(csvar) + "'");
+// javascript(jsvar + " = " + csvar);
+);
+
+exejs(argmentcom) := (
+javascript(argmentcom)
+);
+execs(argmentcom):=(
+parse(argmentcom);
+);
+exealg(com) := (
+regional(exealtmp2);
+exejs("exealtmp1=Algebrite.run('"+com+"')");
+jsstringtocs("exealtmp1","exealtmp2");
+exealtmp2;
+);
+alert(str) := (
+javascript("alert('"+str+"')");
+);
+// exealgなどの定義終了 ;
+//</script>

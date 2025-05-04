@@ -1,0 +1,48 @@
+ketcindyjsで作成したkettaskv01-1.htmlに
+algebriteを組み込んで
+kettaskv250504.htmlを作る手順
+
+作成したKeTCindyJSのhtmlファイルにAlgebriteを組み込むには，
+次のようにスクリプトを追加する。
+
+
+kettaskv01-1.htmlの場合
+（１）36行目の
+   <script type="text/javascript" src="ketcindyjs/Cindy.js"></script>
+の次の行に
+にAlg0.txtの内容
+<!-- algebrite組み込み -->
+<script src="algebrite.bundle-for-browser.js"></script>
+を追加する。
+※ 目印のために，説明を挿入してあり，コメントアウトは
+htmlの“<!--  -->”を使った。
+※　ファイル"algebrite.bundle-for-browser.js"は，
+algebriteのgithubのページ
+https://github.com/davidedc/Algebrite
+から取得できる。
+
+
+（２）40行目に
+先のAlg0.txtの内容につづいて，Alg1.txtの内容を追加する。
+※ これでAlgebraとKeTCindyで変数を共有するのだと思う。
+
+（３）id="csinit"を含むscriptは，競合を避けるため，
+54行目の
+<script id="csinit" type="text/x-cindyscript">
+から，それの終わる
+4300行目の</script>
+の中に，Alg2.txtの内容を挿入する。
+※ 目印のために，説明を挿入してあるが，コメントアウトは
+htmlの“<!--  -->”でなく，“//”を使った。
+
+
+（４）動作確認のため，
+Ketinit(1);
+のある4337行目のあとに，次の命令2行を入れる。
+
+result = exealg("integral(x^2-1,x)");
+drawtext(T4.xy+[60,0],"x^2-1の積分結果は"+result,size->20);
+
+これで，エラーなく表示できれば良い。
+
+(2025/05/04)
